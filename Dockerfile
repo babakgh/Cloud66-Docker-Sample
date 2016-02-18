@@ -1,7 +1,7 @@
 FROM base/archlinux
 
 RUN pacman-key --populate archlinux 
-RUN pacman-key --keyserver keyserver.ubuntu.com:80 --refresh-keys 
+RUN pacman-key --keyserver hkp://keyserver.ubuntu.com:80 --refresh-keys 
 RUN pacman --sync --refresh --noconfirm --noprogressbar --quiet
 RUN pacman --sync --refresh --sysupgrade --noconfirm --noprogressbar --quiet
 RUN pacman-db-upgrade && pacman --sync --noconfirm --noprogressbar --quiet jre7-openjdk-headless unzip lsof ca-certificates-java
